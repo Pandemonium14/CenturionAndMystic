@@ -1,0 +1,34 @@
+{
+  "${ModID}:ExampleTwoAmount": {
+    "NAME": "Example 2",
+    "DESCRIPTIONS": [
+      "At the start of your turn, gain #b",
+      " #yStrength and #b",
+      " #yDexterity."
+    ]
+  },"${ModID}:DrainInfusion": {
+  "NAME": "Drain Infusion",
+  "DESCRIPTIONS": [
+    "Your next attack deals #yDrain damage.",
+    "Your next #b",
+    " attacks deal #yDrain damage."
+    ]
+  },"${ModID}:VenomPower": {
+  "NAME": "Venom",
+  "DESCRIPTIONS": [
+    "Used to trigger powerful effects."
+    ]
+  },"${ModID}:VenomRitualPower": {
+  "NAME": "Venom Ritual",
+  "DESCRIPTIONS": [
+    "At the end of your turn, deal damage equal to the enemy having the most #yVenom equal to its #Venom amount."
+  ]
+},"${ModID}:VenomInfusionPower": {
+  "NAME": "Venom Infusion",
+  "DESCRIPTIONS": [
+    "Your next attack deals #yVenom damage.",
+    "Your next #b",
+    " attacks deal #yVenom damage."
+  ]
+}
+}

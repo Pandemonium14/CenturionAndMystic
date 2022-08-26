@@ -1,0 +1,51 @@
+[
+  {
+    "PROPER_NAME": "TODO",
+    "NAMES": [
+      "todo",
+      "todos"
+    ],
+    "DESCRIPTION": "TODO: Make your own epic keywords"
+  },
+  {
+    "PROPER_NAME": "Call",
+    "NAMES": [
+      "Call",
+      "call",
+      "Called",
+      "called",
+      "invoke",
+      "search",
+      "sift"
+    ],
+    "DESCRIPTION": "Put a card of a certain type from your draw pile in your hand. If your draw pile contains no card of that type, put a random card of that type from your discard pile to your hand."
+  },
+  {
+  "PROPER_NAME": "Drain",
+  "NAMES": [
+    "Drain",
+    "drain",
+    "Drained",
+    "drained"
+  ],
+  "DESCRIPTION": "Drain damage grants #yTemporary #yHP equal to unblocked damage dealt."
+},
+  {
+    "PROPER_NAME": "Empower",
+    "NAMES": [
+      "Empower",
+      "empower",
+      "Empowered",
+      "empowered"
+    ],
+    "DESCRIPTION": "Changes the damage type of your next hit."
+  },
+  {
+    "PROPER_NAME": "Venom",
+    "NAMES": [
+      "Venom",
+      "venom"
+    ],
+    "DESCRIPTION": "Venom damage inflicts #yVenom equal to unblocked damage dealt. #yVenom is used to trigger powerful effects."
+  }
+]
