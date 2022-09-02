@@ -17,7 +17,7 @@ public class Fury extends AbstractEasyCard {
     public Fury() {
         super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         baseDamage = 4;
-        CardModifierManager.addModifier(this, new CenturionCost(cost));
+        setCenturionCost(cost);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

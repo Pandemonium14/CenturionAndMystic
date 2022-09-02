@@ -16,7 +16,7 @@
   },"${ModID}:VenomPower": {
   "NAME": "Venom",
   "DESCRIPTIONS": [
-    "Used to trigger powerful effects."
+    "Used to trigger powerful effects. #yVenom decreases by #b5 at the start of your turn."
     ]
   },"${ModID}:VenomRitualPower": {
   "NAME": "Venom Ritual",
@@ -29,6 +29,11 @@
     "Your next attack deals #yVenom damage.",
     "Your next #b",
     " attacks deal #yVenom damage."
+  ]
+},"${ModID}:PurifyPower": {
+  "NAME": "Purify",
+  "DESCRIPTIONS": [
+    "Your basic #yStrikes and #yDefend #Exhaust when played."
   ]
 }
 }

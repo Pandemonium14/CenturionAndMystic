@@ -20,7 +20,7 @@ public class DrainingStrike extends AbstractEasyCard {
         super(ID,1 , CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         baseDamage = 8;
         DamageModifierManager.addModifier(this,new DrainDamageModifier(true));
-        CardModifierManager.addModifier(this, new CenturionCost(cost));
+        setCenturionCost(cost);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

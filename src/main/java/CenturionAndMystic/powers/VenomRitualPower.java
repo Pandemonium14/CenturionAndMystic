@@ -55,8 +55,6 @@ public class VenomRitualPower extends AbstractEasyPower {
                     addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, amount, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.POISON, false));
                 }
             }
-
         }
-
     }
 }

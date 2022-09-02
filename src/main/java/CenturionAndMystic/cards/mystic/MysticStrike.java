@@ -21,12 +21,14 @@ public class MysticStrike extends AbstractEasyCard {
     // intellij stuff ATTACK, ENEMY, BASIC, 6, 3, , , , 
 
     public MysticStrike() {
-        super(ID, 1, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF);
-        baseMagicNumber = magicNumber = 5;
-        CardModifierManager.addModifier(this, new MysticCost(1));
+        super(ID, 1, CardType.ATTACK, CardRarity.BASIC, CardTarget.ENEMY);
+        baseMagicNumber = magicNumber = 2;
+        baseDamage = 2;
+        setMysticCost(cost);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
         this.addToBot(new ApplyPowerAction(p,p,new VigorPower(p,magicNumber)));
     }
 

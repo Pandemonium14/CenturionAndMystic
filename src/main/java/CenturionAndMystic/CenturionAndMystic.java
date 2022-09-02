@@ -86,14 +86,12 @@ public class CenturionAndMystic extends CustomPlayer {
         ArrayList<String> retVal = new ArrayList<>();
         for (int i = 0; i < 2; i++) {
             retVal.add(Strike.ID);
+            retVal.add(MysticDefend.ID);
         }
         for (int i = 0; i < 2; i++) {
             retVal.add(Defend.ID);
+            retVal.add(MysticStrike.ID);
         }
-        retVal.add(MysticStrike.ID);
-        retVal.add(MysticStrike.ID);
-        retVal.add(MysticDefend.ID);
-        retVal.add(MysticDefend.ID);
         retVal.add(Distract.ID);
         retVal.add(Hasten.ID);
         return retVal;

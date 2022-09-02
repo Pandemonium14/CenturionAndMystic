@@ -20,7 +20,7 @@ public class Distract extends AbstractEasyCard {
         super(ID, 1, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF);
         baseBlock = 8;
         baseMagicNumber = magicNumber = 1;
-        CardModifierManager.addModifier(this, new CenturionCost(cost));
+        setCenturionCost(cost);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

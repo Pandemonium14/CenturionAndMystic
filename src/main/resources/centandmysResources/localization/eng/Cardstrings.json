@@ -9,11 +9,11 @@
   },
   "${ModID}:MysticStrike": {
     "NAME": "Mystic Strike",
-    "DESCRIPTION": "Gain !M! Vigor."
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! Vigor."
   },
   "${ModID}:MysticDefend": {
     "NAME": "Mystic Defend",
-    "DESCRIPTION": "Gain !B! Block."
+    "DESCRIPTION": "Gain !M! *Temporary *HP."
   },
   "${ModID}:Hasten": {
     "NAME": "Hasten",
@@ -57,6 +57,22 @@
   },
   "${ModID}:BlackVenomRitual": {
     "NAME": "Black Venom Ritual",
-    "DESCRIPTION": "{@@}centandmys:Empower centandmys:Venom. NL At the end of this turn, {!Upgrades!|0=the enemy with the most centandmys:Venom loses HP equal to its centandmys:Venom.|1=ALL enemies lose HP equal to their centandmys:Venom.}"
+    "DESCRIPTION": "{@@}{!Upgrades!|0=The enemy with the most centandmys:Venom loses HP equal to its centandmys:Venom.|1=ALL enemies lose HP equal to their centandmys:Venom.}"
+  },
+  "${ModID}:TranscendTheFlesh": {
+    "NAME": "Transcend The Flesh",
+    "DESCRIPTION": "Lose all *Temporary *HP. NL Gain 1 Strength for every 3 *Temporary *HP lost this way. NL Exhaust."
+  },
+  "${ModID}:ConduitStrike": {
+    "NAME": "Conduit Strike",
+    "DESCRIPTION": "Deal !D! damage. NL Reapply all centandmys:Empower effects that would be used by this attack."
+  },
+  "${ModID}:InfuseVenom": {
+    "NAME": "Infuse Venom",
+    "DESCRIPTION": "Gain !M! Vigor. NL centandmys:Empower centandmys:Venom."
+  },
+  "${ModID}:Purify": {
+    "NAME": "Purify",
+    "DESCRIPTION": "Innate. NL Gain !M! Artifact. NL Your basic *Strikes and *Defends Exhaust when played."
   }
 }

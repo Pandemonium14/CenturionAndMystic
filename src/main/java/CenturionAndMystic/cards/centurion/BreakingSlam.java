@@ -21,7 +21,7 @@ public class BreakingSlam extends AbstractEasyCard {
         super(ID, 1, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY);
         baseDamage = 10;
         baseMagicNumber = magicNumber = 2;
-        CardModifierManager.addModifier(this, new CenturionCost(cost));
+        setCenturionCost(cost);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

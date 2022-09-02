@@ -1,6 +1,7 @@
 package CenturionAndMystic.cards.mystic;
 
 import CenturionAndMystic.cards.AbstractEasyCard;
+import com.evacipated.cardcrawl.mod.stslib.actions.tempHp.AddTemporaryHPAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -15,16 +16,16 @@ public class MysticDefend extends AbstractEasyCard {
 
     public MysticDefend() {
         super(ID, 1, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF);
-        baseBlock = 5;
+        baseMagicNumber = magicNumber = 3;
         setMysticCost(1);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        blck();
+        addToBot(new AddTemporaryHPAction(p,p, magicNumber));
     }
 
     public void upp() {
-        upgradeBlock(3);
+        upgradeMagicNumber(1);
     }
 
     @Override

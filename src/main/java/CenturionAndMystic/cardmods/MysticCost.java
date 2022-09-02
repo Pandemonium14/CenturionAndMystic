@@ -18,6 +18,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import org.apache.logging.log4j.Level;
 
@@ -95,7 +96,7 @@ public class MysticCost extends AbstractCardModifier implements AlternateCardCos
             sb.draw(energyTexture, drawX, drawY, energyTexture.getRegionWidth()/2f, energyTexture.getRegionHeight()/2f, energyTexture.getRegionWidth(), energyTexture.getRegionHeight(), card.drawScale, card.drawScale, card.angle);
 
             Color textColor = null;
-            if (card.cost <= resource()) {
+            if (card.cost <= resource(card)) {
                 textColor = Color.WHITE;
             } else {
                 textColor = Color.RED;
@@ -122,8 +123,8 @@ public class MysticCost extends AbstractCardModifier implements AlternateCardCos
         return true;
     }
 
-    private int resource() {
-        if (AbstractDungeon.player == null) return 5;
+    private int resource(AbstractCard card) {
+        if (AbstractDungeon.player == null || AbstractDungeon.screen == AbstractDungeon.CurrentScreen.CARD_REWARD || AbstractDungeon.getCurrRoom().phase != AbstractRoom.RoomPhase.COMBAT || AbstractDungeon.player.masterDeck.contains(card)) return 5;
         MysticEnergyPanel panel = SecondCharFields.mysticEnergyPanel.get(AbstractDungeon.player);
         if (panel != null) {
             return panel.energy + EnergyPanel.totalCount;

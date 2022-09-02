@@ -229,6 +229,32 @@ public abstract class AbstractEasyCard extends CustomCard {
 
     protected void setMysticCost(int cost) {
         CardModifierManager.addModifier(this, new MysticCost(cost));
+        switch (type) {
+            case ATTACK:
+                setBackgroundTexture(CentAndMysMod.makeImagePath("512/attackM.png"),CentAndMysMod.makeImagePath("1024/attackM.png"));
+                break;
+            case SKILL:
+                setBackgroundTexture(CentAndMysMod.makeImagePath("512/skillM.png"),CentAndMysMod.makeImagePath("1024/skillM.png"));
+                break;
+            case POWER:
+                setBackgroundTexture(CentAndMysMod.makeImagePath("512/powerM.png"),CentAndMysMod.makeImagePath("1024/powerM.png"));
+                break;
+        }
+    }
+
+    protected void setCenturionCost(int cost) {
+        CardModifierManager.addModifier(this, new CenturionCost(cost));
+        switch (type) {
+            case ATTACK:
+                setBackgroundTexture(CentAndMysMod.makeImagePath("512/attackC.png"),CentAndMysMod.makeImagePath("1024/attackC.png"));
+                break;
+            case SKILL:
+                setBackgroundTexture(CentAndMysMod.makeImagePath("512/skillC.png"),CentAndMysMod.makeImagePath("1024/skillC.png"));
+                break;
+            case POWER:
+                setBackgroundTexture(CentAndMysMod.makeImagePath("512/powerC.png"),CentAndMysMod.makeImagePath("1024/powerC.png"));
+                break;
+        }
     }
 
     protected List<String> mysticDescriptor() {
