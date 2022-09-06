@@ -1,6 +1,7 @@
 package CenturionAndMystic.cards.mystic;
 
 import CenturionAndMystic.cards.AbstractEasyCard;
+import CenturionAndMystic.powers.FrailHexPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -14,13 +15,15 @@ public class HexOfTheFrail extends AbstractEasyCard {
     // intellij stuff SKILL, , , , , , , 2, 
 
     public HexOfTheFrail() {
-        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.ENEMY);
-        baseMagicNumber = magicNumber = 2;
+        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        baseMagicNumber = magicNumber = 1;
         setMysticCost(1);
+        exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(m,p, new VulnerablePower(m,magicNumber,false)));
+        addToBot(new ApplyPowerAction(m,p, new FrailHexPower(m)));
     }
 
     public void upp() {

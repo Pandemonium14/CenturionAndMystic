@@ -281,7 +281,7 @@ public abstract class AbstractEasyCard extends CustomCard {
     }
 
     protected static boolean isPlayerEmpowered() {
-        return CentAndMysMod.isPlayerEmpowered();
+        return CentAndMysMod.isPlayerInfused();
     }
 }
 

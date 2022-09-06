@@ -21,31 +21,39 @@
     "DESCRIPTION": "Put a card of a certain type from your draw pile in your hand. If your draw pile contains no card of that type, put a random card of that type from your discard pile to your hand."
   },
   {
-  "PROPER_NAME": "Drain",
+  "PROPER_NAME": "Drain Damage",
   "NAMES": [
-    "Drain",
-    "drain",
+    "drain damage",
+    "drain_damage",
     "Drained",
     "drained"
   ],
-  "DESCRIPTION": "Drain damage grants #yTemporary #yHP equal to unblocked damage dealt."
+  "DESCRIPTION": "Drain damage grants #yTemporary #yHP equal to half the unblocked damage dealt."
 },
   {
-    "PROPER_NAME": "Empower",
+    "PROPER_NAME": "Infuse",
     "NAMES": [
-      "Empower",
-      "empower",
-      "Empowered",
-      "empowered"
+      "Infuse",
+      "infuse",
+      "Infused",
+      "infused"
     ],
-    "DESCRIPTION": "Changes the damage type of your next hit."
+    "DESCRIPTION": "Changes the damage type of your next hit. #yVigor counts as an #yInfusion."
+  },
+  {
+    "PROPER_NAME": "Venom Damage",
+    "NAMES": [
+      "venom damage",
+      "venom_damage"
+    ],
+    "DESCRIPTION": "Venom damage inflicts #yVenom equal to unblocked damage dealt. When hit, creatures with #yVenom lose HP equal to unblocked damage, up to their amount of #yVenom, and lose that much #yVenom."
   },
   {
     "PROPER_NAME": "Venom",
     "NAMES": [
-      "Venom",
-      "venom"
+      "venom",
+      "Venom"
     ],
-    "DESCRIPTION": "Venom damage inflicts #yVenom equal to unblocked damage dealt. #yVenom is used to trigger powerful effects."
+    "DESCRIPTION": "When hit, creatures with #yVenom lose HP equal to unblocked damage, up to their amount of #yVenom, and lose that much #yVenom."
   }
 ]

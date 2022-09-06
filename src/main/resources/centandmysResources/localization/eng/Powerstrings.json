@@ -16,7 +16,7 @@
   },"${ModID}:VenomPower": {
   "NAME": "Venom",
   "DESCRIPTIONS": [
-    "Used to trigger powerful effects. #yVenom decreases by #b5 at the start of your turn."
+    "When hit, creatures with #yVenom lose HP equal to unblocked damage, up to their amount of #yVenom, and lose that much #yVenom."
     ]
   },"${ModID}:VenomRitualPower": {
   "NAME": "Venom Ritual",
@@ -34,6 +34,11 @@
   "NAME": "Purify",
   "DESCRIPTIONS": [
     "Your basic #yStrikes and #yDefend #Exhaust when played."
+  ]
+},"${ModID}:FrailHexPower": {
+  "NAME": "Frail Hex",
+  "DESCRIPTIONS": [
+    "This enemy cannot gain block."
   ]
 }
 }

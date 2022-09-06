@@ -23,7 +23,7 @@ public class DrainInfusion extends AbstractEasyCard {
 
     public DrainInfusion() {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
-        baseMagicNumber = magicNumber = 4;
+        baseMagicNumber = magicNumber = 2;
         setMysticCost(1);
     }
 

@@ -18,7 +18,7 @@ public class DrainDamageModifier extends AbstractDamageModifier {
     @Override
     public void onLastDamageTakenUpdate(DamageInfo info, int lastDamageTaken, int overkillAmount, AbstractCreature targetHit) {
         if (lastDamageTaken > 0) {
-            this.addToBot(new AddTemporaryHPAction(info.owner, info.owner, lastDamageTaken));
+            this.addToBot(new AddTemporaryHPAction(info.owner, info.owner, lastDamageTaken/2));
         }
     }
 

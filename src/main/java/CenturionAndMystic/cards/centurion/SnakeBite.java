@@ -17,7 +17,7 @@ public class SnakeBite extends AbstractEasyCard {
 
     public SnakeBite() {
         super(ID,1 , CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        baseDamage = 8;
+        baseDamage = 9;
         DamageModifierManager.addModifier(this,new VenomDamageModifier(true));
         setCenturionCost(cost);
     }

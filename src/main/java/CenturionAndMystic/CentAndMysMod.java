@@ -23,6 +23,7 @@ import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import CenturionAndMystic.cards.AbstractEasyCard;
 import CenturionAndMystic.cards.other.cardvars.SecondDamage;
@@ -191,7 +192,8 @@ public class CentAndMysMod implements
         }
     }
 
-    public static boolean isPlayerEmpowered() {
+    public static boolean isPlayerInfused() {
+        if (AbstractDungeon.player.hasPower(VigorPower.POWER_ID)) return true;
         for (AbstractPower p : AbstractDungeon.player.powers) {
             if (p instanceof AbstractEasyPower) {
                 if (((AbstractEasyPower) p).isInfusion) {

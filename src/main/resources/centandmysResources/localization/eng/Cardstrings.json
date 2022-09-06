@@ -29,19 +29,19 @@
   },
   "${ModID}:HexOfTheFrail": {
     "NAME": "Hex of the Frail",
-    "DESCRIPTION": "Apply !M! Vulnerable."
+    "DESCRIPTION": "Apply !M! Vulnerable. NL Enemy cannot gain Block for the rest of combat. NL Exhaust."
   },
   "${ModID}:DrainingStrike": {
     "NAME": "Draining Strike",
-    "DESCRIPTION": "Deal !D! centandmys:Drain damage."
+    "DESCRIPTION": "Deal !D! centandmys:Drain_damage."
   },
   "${ModID}:DrainInfusion": {
     "NAME": "Drain Infusion",
-    "DESCRIPTION": "Gain !M! Vigor. NL centandmys:Empower centandmys:Drain."
+    "DESCRIPTION": "Gain !M! Vigor. NL centandmys:Infuse centandmys:drain_damage."
   },
   "${ModID}:BreakingSlam": {
     "NAME": "Breaking Slam",
-    "DESCRIPTION": "Deal !D! damage. NL If you are centandmys:Empowered, apply !M! Vulnerable."
+    "DESCRIPTION": "Deal !D! damage. NL If you are centandmys:Infused, apply !M! Vulnerable."
   },
   "${ModID}:MysticEnergyChoice": {
     "NAME": "Give it to the Mystic",
@@ -53,7 +53,7 @@
   },
   "${ModID}:SnakeBite": {
     "NAME": "Snake Bite",
-    "DESCRIPTION": "Deal !D! centandmys:Venom Damage."
+    "DESCRIPTION": "Deal !D! centandmys:Venom_damage."
   },
   "${ModID}:BlackVenomRitual": {
     "NAME": "Black Venom Ritual",
@@ -65,14 +65,42 @@
   },
   "${ModID}:ConduitStrike": {
     "NAME": "Conduit Strike",
-    "DESCRIPTION": "Deal !D! damage. NL Reapply all centandmys:Empower effects that would be used by this attack."
+    "DESCRIPTION": "Deal !D! damage. NL Reapply all centandmys:Infuse effects that would be used by this attack."
   },
-  "${ModID}:InfuseVenom": {
-    "NAME": "Infuse Venom",
-    "DESCRIPTION": "Gain !M! Vigor. NL centandmys:Empower centandmys:Venom."
+  "${ModID}:VenomInfusion": {
+    "NAME": "Venom Infusion",
+    "DESCRIPTION": "Gain !M! Vigor. NL centandmys:Infuse centandmys:Venom_damage."
   },
   "${ModID}:Purify": {
     "NAME": "Purify",
     "DESCRIPTION": "Innate. NL Gain !M! Artifact. NL Your basic *Strikes and *Defends Exhaust when played."
+  },
+  "${ModID}:TransmuteBody": {
+    "NAME": "Transmute Body",
+    "DESCRIPTION": "Lose 3 HP. NL Gain !M! *Temporary *HP."
+  },
+  "${ModID}:Empower": {
+    "NAME": "Empower",
+    "DESCRIPTION": "Gain !M! Vigor."
+  },
+  "${ModID}:FieldTactics": {
+    "NAME": "Field Tactics",
+    "DESCRIPTION": "centandmys:Call a *Mystic card. NL centandmys:Call a *Centurion card. NL Next turn, draw !M! additional cards."
+  },
+  "${ModID}:Crush": {
+    "NAME": "Crush",
+    "DESCRIPTION": "Deal !D! damage. NL Deals !M! additional damage if you are not centandmys:Infused."
+  },
+  "${ModID}:BlackMist": {
+    "NAME": "Black Mist",
+    "DESCRIPTION": "Apply !centandmys:m2! centandmys:Venom and !M! Weak to ALL enemies."
+  },
+  "${ModID}:Connection": {
+    "NAME": "Connection",
+    "DESCRIPTION": "Lose all *Centurion and *Mystic energy. Gain that many [E]."
+  },
+  "${ModID}:StandStrong": {
+    "NAME": "Stand Strong",
+    "DESCRIPTION": "Discard !M! cards. If they are both *Mystic cards, gain Block equal to the intended damage of ALL enemies."
   }
 }

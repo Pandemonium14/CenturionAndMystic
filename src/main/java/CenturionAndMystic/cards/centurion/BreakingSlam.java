@@ -18,7 +18,7 @@ public class BreakingSlam extends AbstractEasyCard {
     // intellij stuff , , , 10, 2, , , 2, 1
 
     public BreakingSlam() {
-        super(ID, 1, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY);
+        super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         baseDamage = 10;
         baseMagicNumber = magicNumber = 2;
         setCenturionCost(cost);
