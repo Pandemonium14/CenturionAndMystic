@@ -102,5 +102,13 @@
   "${ModID}:StandStrong": {
     "NAME": "Stand Strong",
     "DESCRIPTION": "Discard !M! cards. If they are both *Mystic cards, gain Block equal to the intended damage of ALL enemies."
+  },
+  "${ModID}:VisionsOfSnecko": {
+    "NAME": "Visions of Snecko",
+    "DESCRIPTION": "Draw !M! cards. NL Randomize the cost of cards in your hand (between 0 and 2). NL Exhaust."
+  },
+  "${ModID}:RecklessGuard": {
+    "NAME": "Reckless Guard",
+    "DESCRIPTION": "Lose 3 HP. NL Gain !B! Block."
   }
 }

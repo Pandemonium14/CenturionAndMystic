@@ -24,6 +24,6 @@ public class Empower extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeMagicNumber(9);
+        upgradeMagicNumber(3);
     }
 }

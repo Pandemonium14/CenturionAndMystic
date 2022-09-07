@@ -18,7 +18,7 @@ public class Crush extends AbstractEasyCard {
     // intellij stuff , , , 12, , , , 8, 4
 
     public Crush() {
-        super(ID, 2, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY);
+        super(ID, 2, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         baseDamage = 12;
         baseMagicNumber = magicNumber = 8;
         setCenturionCost(2);
