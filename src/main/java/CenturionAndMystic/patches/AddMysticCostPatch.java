@@ -1,6 +1,7 @@
 package CenturionAndMystic.patches;
 
 import CenturionAndMystic.CenturionAndMystic;
+import CenturionAndMystic.cardmods.CenturionCost;
 import CenturionAndMystic.cardmods.MysticCost;
 import basemod.helpers.CardModifierManager;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
@@ -16,11 +17,11 @@ public class AddMysticCostPatch {
 
     @SpirePostfixPatch
     public static void addMysticCost(AbstractCard __instance) {
-        if (AbstractDungeon.player != null && AbstractDungeon.player.chosenClass == CenturionAndMystic.Enums.CENT_AND_MYS) {
+        if (AbstractDungeon.player != null && AbstractDungeon.player.chosenClass == CenturionAndMystic.Enums.CENT_AND_MYS && __instance.color != CenturionAndMystic.Enums.CENTURION_COLOR) {
             if (!(__instance.type == AbstractCard.CardType.ATTACK || __instance.baseBlock >= 0)) {
-             //   CardModifierManager.addModifier(__instance, new MysticCost(__instance.cost));
+                CardModifierManager.addModifier(__instance, new MysticCost(__instance.cost));
             } else {
-
+                CardModifierManager.addModifier(__instance, new CenturionCost(__instance.cost));
             }
         }
     }

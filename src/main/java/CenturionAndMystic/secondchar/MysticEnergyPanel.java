@@ -17,8 +17,8 @@ import com.megacrit.cardcrawl.relics.IceCream;
 
 public class MysticEnergyPanel implements CustomSavable<Integer> {
 
-    public int energy;
-    public static int baseEnergy;
+    public int energy = 0;
+    public static int baseEnergy = 0;
 
     public Hitbox hb;
 
@@ -46,6 +46,10 @@ public class MysticEnergyPanel implements CustomSavable<Integer> {
         //hitbox
     }
 
+    public void atStartOfBattle() {
+        trueResetEnergy();
+    }
+
     public void gainEnergy(int e) {
         energy += e;
         flash();
@@ -57,6 +61,11 @@ public class MysticEnergyPanel implements CustomSavable<Integer> {
         } else {
             energy = baseEnergy;
         }
+        flash();
+    }
+
+    public void trueResetEnergy() {
+        energy = baseEnergy;
         flash();
     }
 

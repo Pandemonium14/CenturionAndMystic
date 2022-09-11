@@ -1,10 +1,8 @@
 package CenturionAndMystic.cards.centurion;
 
 import CenturionAndMystic.actions.IncreasePowerAction;
-import CenturionAndMystic.cardmods.CenturionCost;
 import CenturionAndMystic.cards.AbstractEasyCard;
 import CenturionAndMystic.powers.AbstractEasyPower;
-import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -55,7 +53,7 @@ public class ConduitStrike extends AbstractEasyCard {
     @Override
     public void triggerOnGlowCheck() {
         glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-        if (isPlayerEmpowered()) {
+        if (isPlayerInfused()) {
             glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         }
     }

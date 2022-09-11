@@ -8,6 +8,7 @@ import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.DamageModApplyingPo
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
@@ -39,7 +40,11 @@ public class VenomInfusionPower extends AbstractEasyPower implements DamageModAp
 
     @Override
     public boolean shouldPushMods(DamageInfo damageInfo, Object o, List<AbstractDamageModifier> list) {
-        return true;
+        if (o instanceof AbstractCard && damageInfo != null) {
+            return ((AbstractCard) o).type == AbstractCard.CardType.ATTACK && damageInfo.type != DamageInfo.DamageType.HP_LOSS;
+        } else {
+            return false;
+        }
     }
 
     @Override

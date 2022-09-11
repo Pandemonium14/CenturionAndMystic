@@ -13,9 +13,11 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
+import com.badlogic.gdx.utils.compression.lzma.Base;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -24,6 +26,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import CenturionAndMystic.cards.AbstractEasyCard;
 import CenturionAndMystic.cards.other.cardvars.SecondDamage;
@@ -44,7 +47,8 @@ public class CentAndMysMod implements
         OnPlayerTurnStartSubscriber,
         StartGameSubscriber,
         PostDungeonUpdateSubscriber,
-        PostInitializeSubscriber{
+        PostInitializeSubscriber,
+        OnStartBattleSubscriber{
 
     public static final String modID = "centandmys";
 
@@ -182,6 +186,7 @@ public class CentAndMysMod implements
 
     @Override
     public void receiveOnPlayerTurnStart() {
+        if (GameActionManager.turn == 0) return;
         MysticEnergyPanel panel = SecondCharFields.mysticEnergyPanel.get(AbstractDungeon.player);
         if (panel != null) {
             panel.atStartOfTurn();
@@ -224,5 +229,18 @@ public class CentAndMysMod implements
     public void receivePostInitialize() {
         BaseMod.addSaveField("MysticEnergy", new MysticEnergyPanel(2));
         BaseMod.addSaveField("CenturionEnergy", new CenturionEnergyPanel(2));
+        BaseMod.addSaveField("CentAndMysEnergyHistory", new EnergyGainManager(true));
+    }
+
+    @Override
+    public void receiveOnBattleStart(AbstractRoom abstractRoom) {
+        MysticEnergyPanel panel = SecondCharFields.mysticEnergyPanel.get(AbstractDungeon.player);
+        if (panel != null) {
+            panel.atStartOfBattle();
+        }
+        CenturionEnergyPanel Cpanel = SecondCharFields.centurionEnergyPanel.get(AbstractDungeon.player);
+        if (Cpanel != null) {
+            Cpanel.atStartOfBattle();
+        }
     }
 }

@@ -23,7 +23,7 @@
   "DESCRIPTIONS": [
     "At the end of your turn, deal damage equal to the enemy having the most #yVenom equal to its #Venom amount."
   ]
-},"${ModID}:VenomInfusionPower": {
+},"${ModID}:VenomInfusion": {
   "NAME": "Venom Infusion",
   "DESCRIPTIONS": [
     "Your next attack deals #yVenom damage.",
@@ -39,6 +39,16 @@
   "NAME": "Frail Hex",
   "DESCRIPTIONS": [
     "This enemy cannot gain block."
+  ]
+},"${ModID}:TeamworkPower": {
+  "NAME": "Teamwork",
+  "DESCRIPTIONS": [
+    "When you play a #yCenturion or #Mystic card that costs 1 [E] or more, #call a card of the other type."
+  ]
+},"${ModID}:AssimilationPower": {
+  "NAME": "Assimilation",
+  "DESCRIPTIONS": [
+    "At the end of your turn, if you are #yInfused, gain #b"," #yTemporary #yHP."
   ]
 }
 }

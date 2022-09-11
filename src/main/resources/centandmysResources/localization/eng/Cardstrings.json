@@ -110,5 +110,49 @@
   "${ModID}:RecklessGuard": {
     "NAME": "Reckless Guard",
     "DESCRIPTION": "Lose 3 HP. NL Gain !B! Block."
+  },
+  "${ModID}:Teamwork": {
+    "NAME": "Teamwork",
+    "DESCRIPTION": "This turn, when you play a *Mystic or *Centurion card that costs 1 or more, centandmys:Call a card of the other type. Exhaust."
+  },
+  "${ModID}:YourTurn": {
+    "NAME": "Your Turn",
+    "DESCRIPTION": "{@@}{!Upgrades!|>0=Retain NL }Choose one : Lose all *Centurion [E] , gain that much *Mystic [E] and centandmys:Call a *Mystic card, or do the opposite."
+  },
+  "${ModID}:YourTurnMystic": {
+    "NAME": "Your Turn, Mystic",
+    "DESCRIPTION": "Lose all *Centurion [E] , gain that much *Mystic [E] and centandmys:Call a *Mystic card."
+  },
+  "${ModID}:YourTurnCenturion": {
+    "NAME": "Your Turn, Centurion",
+    "DESCRIPTION": "Lose all *Mystic [E] , gain that much *Centurion [E] and centandmys:Call a *Centurion card."
+  },
+  "${ModID}:Cohesion": {
+    "NAME": "Cohesion",
+    "DESCRIPTION": "At the end of your turn, if you have no [E] of any type left, gain !M! Block."
+  },
+  "${ModID}:CrackGround": {
+    "NAME": "Crack Ground",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Deals !M! additional damage if your are not centandmys:Infused."
+  },
+  "${ModID}:Assimilation": {
+    "NAME": "Assimilation",
+    "DESCRIPTION": "At the end of your turn, if you are centandmys:Infused, gain !M! *Temporary *HP."
+  },
+  "${ModID}:DelayedHaste": {
+    "NAME": "Delayed Haste",
+    "DESCRIPTION": "{@@}Add !M! *Haste cards to your hand.{!Upgrades!|<1= NL Exhaust.}"
+  },
+  "${ModID}:Haste": {
+    "NAME": "Haste",
+    "DESCRIPTION": "{@@}Retain. NL Choose one: centandmys:Call a *Centurion card or centandmys:Call a *Mystic card.{!Upgrades!|<1= NL Exhaust.}"
+  },
+  "${ModID}:CenturionHaste": {
+    "NAME": "Centurion Haste",
+    "DESCRIPTION": "centandmys:Call a *Centurion card."
+  },
+  "${ModID}:MysticHaste": {
+    "NAME": "Mystic Haste",
+    "DESCRIPTION": "centandmys:Call a *Mystic card."
   }
 }

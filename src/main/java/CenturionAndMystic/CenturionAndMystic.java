@@ -9,24 +9,33 @@ import CenturionAndMystic.cards.mystic.MysticStrike;
 import CenturionAndMystic.patches.SecondCharFields;
 import CenturionAndMystic.secondchar.CenturionEnergyPanel;
 import CenturionAndMystic.secondchar.MysticEnergyPanel;
+import basemod.ReflectionHacks;
 import basemod.abstracts.CustomEnergyOrb;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpineAnimation;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.MathUtils;
+import com.badlogic.gdx.utils.Json;
+import com.esotericsoftware.spine.*;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.characters.AnimatedNpc;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
+import com.megacrit.cardcrawl.rooms.RestRoom;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import CenturionAndMystic.relics.TodoItem;
 
@@ -34,6 +43,7 @@ import java.util.ArrayList;
 
 import static CenturionAndMystic.CenturionAndMystic.Enums.CENTURION_COLOR;
 import static CenturionAndMystic.CentAndMysMod.*;
+import static com.badlogic.gdx.utils.JsonWriter.OutputType.json;
 
 public class CenturionAndMystic extends CustomPlayer {
     private static final String[] orbTextures = {
@@ -48,11 +58,16 @@ public class CenturionAndMystic extends CustomPlayer {
             modID + "Resources/images/char/orb/layer3d.png",
             modID + "Resources/images/char/orb/layer4d.png",
             modID + "Resources/images/char/orb/layer5d.png",};
-    static final String ID = makeID("TheTodo"); //TODO: Change this
+    static final String ID = makeID("CenturionAndMystic"); //TODO: Change this
     static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString(ID);
     static final String[] NAMES = characterStrings.NAMES;
     static final String[] TEXT = characterStrings.TEXT;
 
+    private SpineAnimation mysticSpine = new SpineAnimation("centandmysResources/images/char/mainChar/mystic/skeleton.atlas","centandmysResources/images/char/mainChar/mystic/skeleton.json", 1.0f);
+    private TextureAtlas mysticAtlas = new TextureAtlas(mysticSpine.atlasUrl);
+    private Skeleton mysticSkeleton;
+    private AnimationStateData mysticStateData;
+    private AnimationState mysticState;
 
     public CenturionAndMystic(String name, PlayerClass setClass) {
         super(name, setClass, new CustomEnergyOrb(orbTextures, modID + "Resources/images/char/orb/vfx.png", makeSpinArray()), new SpineAnimation("centandmysResources/images/char/mainChar/tank/skeleton.atlas","centandmysResources/images/char/mainChar/tank/skeleton.json",1f));
@@ -68,6 +83,35 @@ public class CenturionAndMystic extends CustomPlayer {
 
         SecondCharFields.mysticEnergyPanel.set(this, new MysticEnergyPanel(2));
         SecondCharFields.centurionEnergyPanel.set(this, new CenturionEnergyPanel(2));
+
+        state.setTimeScale(0.8f);
+        state.setAnimation(0, "Idle", true);
+
+
+
+        SkeletonJson json = new SkeletonJson(mysticAtlas);
+        SkeletonData skeletonData = json.readSkeletonData(Gdx.files.internal(mysticSpine.skeletonUrl));
+        mysticSkeleton = new Skeleton(skeletonData);
+        mysticStateData = new AnimationStateData(skeletonData);
+        mysticState = new AnimationState(mysticStateData);
+
+        mysticState.setAnimation(0, "Idle", true);
+    }
+
+    @Override
+    public void damage(DamageInfo info) {
+        super.damage(info);
+        if (info.output>0) {
+            state.setAnimation(0, "Hit", false);
+            state.addAnimation(0,"Idle", true, 0.0f);
+        }
+    }
+
+    @Override
+    public void useSlowAttackAnimation() {
+        super.useSlowAttackAnimation();
+        state.setAnimation(0, "Attack", false);
+        state.addAnimation(0,"Idle", true, 0.0f);
     }
 
     private static float[] makeSpinArray() {
@@ -200,10 +244,37 @@ public class CenturionAndMystic extends CustomPlayer {
     public void render(SpriteBatch sb) {
         flipHorizontal = !flipHorizontal;
         super.render(sb);
+
+
+        if (!(AbstractDungeon.getCurrRoom() instanceof RestRoom)) {// 2120
+            if (this.atlas != null && !(boolean)ReflectionHacks.getPrivate(this, AbstractPlayer.class, "renderCorpse")) {
+                renderMystic(sb);
+            }
+        }
         flipHorizontal = ! flipHorizontal;
     }
 
+    private void renderMystic(SpriteBatch sb) {
+        float mX = drawX - 140 * Settings.scale;
+        if (mysticAtlas != null) {// 2156
+            mysticState.update(Gdx.graphics.getDeltaTime());// 2157
+            mysticState.apply(mysticSkeleton);// 2158
+            mysticSkeleton.updateWorldTransform();// 2159
+            mysticSkeleton.setPosition(mX + this.animX, this.drawY + this.animY);// 2160
+            mysticSkeleton.setColor(this.tint.color);// 2163
+            mysticSkeleton.setFlip(this.flipHorizontal, this.flipVertical);// 2164
+            sb.end();// 2165
+            CardCrawlGame.psb.begin();// 2166
+            sr.draw(CardCrawlGame.psb, mysticSkeleton);// 2167
+            CardCrawlGame.psb.end();// 2168
+            sb.begin();// 2169
+        }
+    }
 
+    @Override
+    public void update() {
+        super.update();
+    }
 
     public static class Enums {
         //TODO: Change these.

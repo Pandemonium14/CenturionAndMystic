@@ -45,6 +45,10 @@ public class CenturionEnergyPanel implements CustomSavable<Integer> {
         //hitbox
     }
 
+    public void atStartOfBattle() {
+        trueResetEnergy();
+    }
+
     public void gainEnergy(int e) {
         energy += e;
         flash();
@@ -56,6 +60,11 @@ public class CenturionEnergyPanel implements CustomSavable<Integer> {
         } else {
             energy = baseEnergy;
         }
+        flash();
+    }
+
+    public void trueResetEnergy() {
+        energy = baseEnergy;
         flash();
     }
 

@@ -19,7 +19,7 @@ public class BlackMist extends AbstractEasyCard {
     // intellij stuff , , , , , , , 1, 1
 
     public BlackMist() {
-        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
+        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.ALL_ENEMY);
         baseMagicNumber = magicNumber = 1;
         secondMagic = baseSecondMagic = 6;
         setMysticCost(1);

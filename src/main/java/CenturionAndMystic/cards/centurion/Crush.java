@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static CenturionAndMystic.CentAndMysMod.makeID;
-import static CenturionAndMystic.util.Wiz.*;
 
 public class Crush extends AbstractEasyCard {
 
@@ -25,20 +24,32 @@ public class Crush extends AbstractEasyCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (isPlayerEmpowered()) {
-            dmg(m, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
-        } else {
-            addToBot(new DamageAction(m, new DamageInfo(p, damage + magicNumber), AbstractGameAction.AttackEffect.BLUNT_HEAVY, false));
-        }
+        addToBot(new DamageAction(m, new DamageInfo(p, damage + magicNumber), AbstractGameAction.AttackEffect.BLUNT_HEAVY, false));
     }
 
     @Override
     public void triggerOnGlowCheck() {
-        if (isPlayerEmpowered()) {
+        if (isPlayerInfused()) {
             glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         } else {
             glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         }
+    }
+
+    public void calculateCardDamage(AbstractMonster mo) {
+        int realBaseDamage = this.baseDamage;// 70
+        if (!isPlayerInfused()) this.baseDamage += this.magicNumber;// 71
+        super.calculateCardDamage(mo);// 73
+        this.baseDamage = realBaseDamage;// 75
+        this.isDamageModified = this.damage != this.baseDamage;// 78
+    }// 79
+
+    public void applyPowers() {
+        int realBaseDamage = this.baseDamage;// 85
+        if (!isPlayerInfused()) this.baseDamage += this.magicNumber;// 86
+        super.applyPowers();// 88
+        this.baseDamage = realBaseDamage;// 90
+        this.isDamageModified = this.damage != this.baseDamage;// 93
     }
 
     public void upp() {

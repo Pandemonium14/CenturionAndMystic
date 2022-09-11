@@ -1,9 +1,6 @@
 package CenturionAndMystic.cards.centurion;
 
-import CenturionAndMystic.CentAndMysMod;
-import CenturionAndMystic.cardmods.CenturionCost;
 import CenturionAndMystic.cards.AbstractEasyCard;
-import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -26,7 +23,7 @@ public class BreakingSlam extends AbstractEasyCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
-        if (isPlayerEmpowered()) {
+        if (isPlayerInfused()) {
             addToBot(new ApplyPowerAction(m,p, new VulnerablePower(m, magicNumber, false)));
         }
     }
@@ -39,7 +36,7 @@ public class BreakingSlam extends AbstractEasyCard {
     @Override
     public void triggerOnGlowCheck() {
         glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-        if (isPlayerEmpowered()) {
+        if (isPlayerInfused()) {
             glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         }
     }

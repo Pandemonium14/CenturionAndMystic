@@ -1,22 +1,23 @@
 package CenturionAndMystic.cards.other;
 
-import CenturionAndMystic.CentAndMysMod;
+import CenturionAndMystic.actions.CallCardAction;
+import CenturionAndMystic.cardmods.CenturionCost;
 import CenturionAndMystic.cards.AbstractEasyCard;
+import basemod.helpers.CardModifierManager;
 import basemod.patches.com.megacrit.cardcrawl.screens.compendium.CardLibraryScreen.NoCompendium;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import java.util.List;
-
 import static CenturionAndMystic.CentAndMysMod.makeID;
 import static CenturionAndMystic.util.Wiz.*;
 
-@NoCompendium
-public class MysticEnergyChoice extends AbstractEasyCard {
-    public final static String ID = makeID("MysticEnergyChoice");
-    // intellij stuff , , , , , , , ,
 
-    public MysticEnergyChoice() {
+@NoCompendium
+public class MysticHaste extends AbstractEasyCard {
+    public final static String ID = makeID("MysticHaste");
+    // intellij stuff , , , , , , , , 
+
+    public MysticHaste() {
         super(ID, -2, CardType.SKILL, CardRarity.SPECIAL, CardTarget.SELF);
         setMysticCost(-2);
     }
@@ -27,14 +28,9 @@ public class MysticEnergyChoice extends AbstractEasyCard {
 
     @Override
     public void onChoseThisOption() {
-        CentAndMysMod.energyGainManager.receiveInput("mystic");
+        addToBot(new CallCardAction(1, c -> CardModifierManager.hasModifier(c, CenturionCost.ID)));
     }
 
     public void upp() {
-    }
-
-    @Override
-    public List<String> getCardDescriptors() {
-        return mysticDescriptor();
     }
 }

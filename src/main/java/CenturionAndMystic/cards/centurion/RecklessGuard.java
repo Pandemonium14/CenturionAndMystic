@@ -14,7 +14,7 @@ public class RecklessGuard extends AbstractEasyCard {
 
     public RecklessGuard() {
     super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
-        baseBlock = 13;
+        baseBlock = 14;
         baseMagicNumber = magicNumber = 3;
         setCenturionCost(1);
     }
