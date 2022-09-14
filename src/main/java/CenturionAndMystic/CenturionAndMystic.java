@@ -2,7 +2,9 @@ package CenturionAndMystic;
 
 import CenturionAndMystic.cards.centurion.Defend;
 import CenturionAndMystic.cards.centurion.Distract;
+import CenturionAndMystic.cards.centurion.MaceCrash;
 import CenturionAndMystic.cards.centurion.Strike;
+import CenturionAndMystic.cards.mystic.Bless;
 import CenturionAndMystic.cards.mystic.Hasten;
 import CenturionAndMystic.cards.mystic.MysticDefend;
 import CenturionAndMystic.cards.mystic.MysticStrike;
@@ -134,12 +136,13 @@ public class CenturionAndMystic extends CustomPlayer {
         for (int i = 0; i < 2; i++) {
             retVal.add(Defend.ID);
         }
+        retVal.add(MaceCrash.ID);
         retVal.add(MysticStrike.ID);
         retVal.add(MysticStrike.ID);
         retVal.add(MysticDefend.ID);
         retVal.add(MysticDefend.ID);
-        retVal.add(Distract.ID);
-        retVal.add(Hasten.ID);
+
+        retVal.add(Bless.ID);
         return retVal;
     }
 

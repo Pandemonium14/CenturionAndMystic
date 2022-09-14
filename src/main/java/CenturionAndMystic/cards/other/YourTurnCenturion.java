@@ -10,6 +10,7 @@ import CenturionAndMystic.patches.SecondCharFields;
 import CenturionAndMystic.secondchar.CenturionEnergyPanel;
 import CenturionAndMystic.secondchar.MysticEnergyPanel;
 import basemod.helpers.CardModifierManager;
+import basemod.patches.com.megacrit.cardcrawl.screens.compendium.CardLibraryScreen.NoCompendium;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -19,6 +20,7 @@ import java.util.List;
 
 import static CenturionAndMystic.CentAndMysMod.makeID;
 
+@NoCompendium
 public class YourTurnCenturion extends AbstractEasyCard {
 
     public final static String ID = makeID("YourTurnCenturion");

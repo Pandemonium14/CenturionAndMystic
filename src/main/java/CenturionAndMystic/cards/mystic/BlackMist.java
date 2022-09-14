@@ -21,7 +21,7 @@ public class BlackMist extends AbstractEasyCard {
     public BlackMist() {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.ALL_ENEMY);
         baseMagicNumber = magicNumber = 1;
-        secondMagic = baseSecondMagic = 6;
+        secondMagic = baseSecondMagic = 7;
         setMysticCost(1);
     }
 
@@ -41,7 +41,6 @@ public class BlackMist extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeMagicNumber(1);
-        upgradeSecondMagic(2);
+        upgradeSecondMagic(4);
     }
 }

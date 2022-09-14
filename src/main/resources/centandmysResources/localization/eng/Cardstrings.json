@@ -13,7 +13,7 @@
   },
   "${ModID}:MysticDefend": {
     "NAME": "Mystic Defend",
-    "DESCRIPTION": "Gain !M! *Temporary *HP."
+    "DESCRIPTION": "Gain !M! Temporary_HP."
   },
   "${ModID}:Hasten": {
     "NAME": "Hasten",
@@ -37,7 +37,7 @@
   },
   "${ModID}:DrainInfusion": {
     "NAME": "Drain Infusion",
-    "DESCRIPTION": "Gain !M! Vigor. NL centandmys:Infuse centandmys:drain_damage."
+    "DESCRIPTION": "Gain !M! Vigor. NL centandmys:Infuse centandmys:Drain_damage."
   },
   "${ModID}:BreakingSlam": {
     "NAME": "Breaking Slam",
@@ -57,7 +57,7 @@
   },
   "${ModID}:BlackVenomRitual": {
     "NAME": "Black Venom Ritual",
-    "DESCRIPTION": "{@@}{!Upgrades!|0=The enemy with the most centandmys:Venom loses HP equal to its centandmys:Venom.|1=ALL enemies lose HP equal to their centandmys:Venom.}"
+    "DESCRIPTION": "{@@}Deal centandmys:Drain_damage to {!Upgrades!|0=the enemy with the most centandmys:Venom equal to its centandmys:Venom.|1=ALL enemies equal to their centandmys:Venom.}"
   },
   "${ModID}:TranscendTheFlesh": {
     "NAME": "Transcend The Flesh",
@@ -77,7 +77,7 @@
   },
   "${ModID}:TransmuteBody": {
     "NAME": "Transmute Body",
-    "DESCRIPTION": "Lose 3 HP. NL Gain !M! *Temporary *HP."
+    "DESCRIPTION": "Lose 3 HP. NL Gain !M! Temporary_HP."
   },
   "${ModID}:Empower": {
     "NAME": "Empower",
@@ -97,7 +97,7 @@
   },
   "${ModID}:Connection": {
     "NAME": "Connection",
-    "DESCRIPTION": "Lose all *Centurion and *Mystic energy. Gain that many [E]."
+    "DESCRIPTION": "{@@}Draw !M! card{!M!|>1=s}. NL Lose all *Centurion and *Mystic energy. Gain that many [E]."
   },
   "${ModID}:StandStrong": {
     "NAME": "Stand Strong",
@@ -141,7 +141,7 @@
   },
   "${ModID}:DelayedHaste": {
     "NAME": "Delayed Haste",
-    "DESCRIPTION": "{@@}Add !M! *Haste cards to your hand.{!Upgrades!|<1= NL Exhaust.}"
+    "DESCRIPTION": "{@@}Add !M! *Haste to your hand.{!Upgrades!|<1= NL Exhaust.}"
   },
   "${ModID}:Haste": {
     "NAME": "Haste",
@@ -154,5 +154,25 @@
   "${ModID}:MysticHaste": {
     "NAME": "Mystic Haste",
     "DESCRIPTION": "centandmys:Call a *Mystic card."
+  },
+  "${ModID}:Strategize": {
+    "NAME": "Strategize",
+    "DESCRIPTION": "{@@}Discard any number of cards. For each *Centurion or *Mystic card discarded, centandmys:Call a card of the other type.{!Upgrades!|<1= NL Exhaust.}"
+  },
+  "${ModID}:MaceCrash": {
+    "NAME": "Mace Crash",
+    "DESCRIPTION": "Deal !D! damage. NL Deals !M! additional damage if you are centandmys:Infused."
+  },
+  "${ModID}:Bless": {
+    "NAME": "Bless",
+    "DESCRIPTION": "Gain !M! Temporary_HP. NL Gain !M! Vigor."
+  },
+  "${ModID}:SheerPower": {
+    "NAME": "Sheer Power",
+    "DESCRIPTION": "While you are not centandmys:Infused, your Attacks deal !M! additional damage."
+  },
+  "${ModID}:ImprovedInfusion": {
+    "NAME": "Improved Infusion",
+    "DESCRIPTION": "When you gain an centandmys:Infusion, gain !M! additional Vigor."
   }
 }

@@ -17,8 +17,8 @@ public class Distract extends AbstractEasyCard {
     // intellij stuff skill, self, basic, , ,  5, 3, ,
 
     public Distract() {
-        super(ID, 1, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF);
-        baseBlock = 8;
+        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
+        baseBlock = 7;
         baseMagicNumber = magicNumber = 1;
         setCenturionCost(cost);
     }

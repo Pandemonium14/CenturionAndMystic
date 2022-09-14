@@ -17,29 +17,42 @@ public class DiscardWithFollowUpAction extends AbstractGameAction {
     public int amount;
     public AbstractGameAction action;
     private static final UIStrings strings = CardCrawlGame.languagePack.getUIString("DiscardAction");
+    private boolean anyNumber;
 
     public DiscardWithFollowUpAction(int amount, AbstractGameAction action) {
         discardedCards.clear();
         this.amount = amount;
         this.action = action;
-        duration = Settings.ACTION_DUR_FAST;
+        duration = Settings.ACTION_DUR_XFAST;
+        anyNumber = false;
+    }
+
+    public DiscardWithFollowUpAction(boolean anyNumber, AbstractGameAction action) {
+        discardedCards.clear();
+        this.anyNumber = anyNumber;
+        this.action = action;
+        duration = Settings.ACTION_DUR_XFAST;
     }
 
     @Override
     public void update() {
-        if (duration == Settings.ACTION_DUR_FAST) {
+        if (duration == Settings.ACTION_DUR_XFAST) {
             AbstractPlayer p = AbstractDungeon.player;
-            if (p.hand.size() <= amount) {
-                for (AbstractCard c : p.hand.group) {
-                    discardedCards.add(c);
-                    addToTop(new DiscardSpecificCardAction(c,p.hand));
+            if (!anyNumber) {
+                if (p.hand.size() <= amount) {
+                    for (AbstractCard c : p.hand.group) {
+                        discardedCards.add(c);
+                        addToTop(new DiscardSpecificCardAction(c, p.hand));
+                    }
+                    addToTop(action);
+                    isDone = true;
+                } else {
+                    AbstractDungeon.handCardSelectScreen.open(strings.TEXT[0], amount, false);
                 }
-                addToTop(action);
-                isDone = true;
             } else {
-                AbstractDungeon.handCardSelectScreen.open( strings.TEXT[0], amount, false);
-                tickDuration();
+                AbstractDungeon.handCardSelectScreen.open(strings.TEXT[0],99, true);
             }
+            tickDuration();
         } else {
             ArrayList<AbstractCard> selectedCards = AbstractDungeon.handCardSelectScreen.selectedCards.group;
             for (AbstractCard c : selectedCards) {

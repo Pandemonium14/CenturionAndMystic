@@ -50,5 +50,15 @@
   "DESCRIPTIONS": [
     "At the end of your turn, if you are #yInfused, gain #b"," #yTemporary #yHP."
   ]
+},"${ModID}:SheerPowerPower": {
+  "NAME": "Sheer Power",
+  "DESCRIPTIONS": [
+    "While you are not #yInfused, your Attacks deal #b"," additional damage."
+  ]
+},"${ModID}:ImprovedInfusionPower": {
+  "NAME": "Improved Infusion",
+  "DESCRIPTIONS": [
+    "Whenever you gain an #Infusion, gain #b"," additional #yVigor."
+  ]
 }
 }

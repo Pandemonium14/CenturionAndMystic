@@ -2,6 +2,7 @@ package CenturionAndMystic.cards.other;
 
 import CenturionAndMystic.actions.CallCardAction;
 import CenturionAndMystic.cardmods.CenturionCost;
+import CenturionAndMystic.cardmods.MysticCost;
 import CenturionAndMystic.cards.AbstractEasyCard;
 import basemod.helpers.CardModifierManager;
 import basemod.patches.com.megacrit.cardcrawl.screens.compendium.CardLibraryScreen.NoCompendium;
@@ -28,7 +29,7 @@ public class MysticHaste extends AbstractEasyCard {
 
     @Override
     public void onChoseThisOption() {
-        addToBot(new CallCardAction(1, c -> CardModifierManager.hasModifier(c, CenturionCost.ID)));
+        addToBot(new CallCardAction(1, c -> CardModifierManager.hasModifier(c, MysticCost.ID)));
     }
 
     public void upp() {
