@@ -254,7 +254,7 @@ public class CenturionAndMystic extends CustomPlayer {
                 renderMystic(sb);
             }
         }
-        flipHorizontal = ! flipHorizontal;
+        flipHorizontal = !flipHorizontal;
     }
 
     private void renderMystic(SpriteBatch sb) {

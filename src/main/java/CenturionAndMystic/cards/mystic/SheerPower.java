@@ -14,7 +14,7 @@ public class SheerPower extends AbstractEasyCard {
     // intellij stuff , , , , , , , 3, 
 
     public SheerPower() {
-        super(ID, 0, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, 0, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
         baseMagicNumber = magicNumber = 3;
         setMysticCost(0);
     }

@@ -15,7 +15,7 @@ public class Fury extends AbstractEasyCard {
     // intellij stuff , , , 4, 2, , , , 
 
     public Fury() {
-        super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        super(ID, 2, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
         baseDamage = 4;
         setCenturionCost(cost);
     }

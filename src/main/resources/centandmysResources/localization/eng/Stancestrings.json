@@ -1,0 +1,10 @@
+{
+  "centandmys:CobraStance": {
+    "NAME" : "Cobra Stance",
+    "DESCRIPTION" : ["Whenever you apply a debuff, apply one more stack of it. Upon entering this stance, apply #b5 #yVenom to ALL enemies."]
+  },
+  "centandmys:PythonStance": {
+  "NAME" : "Python Stance",
+  "DESCRIPTION" : ["Whenever you gain #yBlock or #Temporary #yHP, gain one more of it. Upon entering this stance, draw #b1 card."]
+  }
+}
